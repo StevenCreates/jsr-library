@@ -1,7 +1,6 @@
-import { InfoPage } from "./components/InfoPage";
-import { SideNav } from "./components/SideNav";
 import styled from "styled-components";
 import { ReactPagesProvider } from "./ReactPages/ReactPagesContext";
+import AppRouting from "./AppRouting";
 
 const AppStyles = styled.div`
   display: flex;
@@ -12,8 +11,7 @@ function App() {
   return (
     <ReactPagesProvider>
       <AppStyles>
-        <SideNav />
-        <InfoPage />
+        <AppRouting />
       </AppStyles>
     </ReactPagesProvider>
   );
