@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactPagesProvider } from "./ReactPages/ReactPagesContext";
+import { AppProvider } from "./utils/ReactPagesContext";
 import AppRouting from "./AppRouting";
 
 const AppStyles = styled.div`
@@ -9,11 +9,11 @@ const AppStyles = styled.div`
 
 function App() {
   return (
-    <ReactPagesProvider>
+    <AppProvider>
       <AppStyles>
         <AppRouting />
       </AppStyles>
-    </ReactPagesProvider>
+    </AppProvider>
   );
 }
 
