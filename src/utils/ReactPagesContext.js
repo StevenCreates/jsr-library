@@ -1,16 +1,16 @@
-import { createContext, useState, useEffect, useCallback } from 'react';
+import { createContext, useState } from "react";
 
 export const AppContext = createContext();
 
-export const AppProvider = ({ children, props }) => {
+export const AppProvider = ({ children }) => {
+  const [links, setLinks] = useState([
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+  ]);
+  const value = {
+    links,
+    setLinks,
+  };
 
-	const value = {
-    }
-
-    return (
-		<AppContext.Provider value={ value }>
-			{ children }
-		</AppContext.Provider>
-	);
+  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
-
