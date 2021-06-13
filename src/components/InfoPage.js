@@ -1,14 +1,14 @@
 import styled from "styled-components";
-// import Editor from "react-code-live";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 
-const InfoDescription = styled.div`
-  margin: 100px;
-  color: pink;
-`;
-
 const Title = styled.div`
-
+    color: grey;
+    padding-left: 12px;
+    padding-top: 12px;
+    font-size: 24px;
+    width: 100%;
+    height: 30px;
+    background: #343434;
 `;
 
 const LiveEditorContainer = styled.div`
@@ -19,6 +19,9 @@ const LiveEditorContainer = styled.div`
 export const InfoPage = ({ title, description, initialCode }) => {
   return (
     <div>
+      <Title>
+        {title}
+      </Title>
       <LiveEditorContainer>
         <LiveProvider code={initialCode}>
           <LiveEditor
