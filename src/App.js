@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { AppProvider } from "./utils/ReactPagesContext";
-import {AppRouting} from "./AppRouting";
+import { AppRouting } from "./AppRouting";
 
 const AppStyles = styled.div`
   display: flex;

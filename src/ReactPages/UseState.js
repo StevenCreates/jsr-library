@@ -1,12 +1,10 @@
-
-import { InfoPage } from '../components/InfoPage'
+import { InfoPage } from "../components/InfoPage";
 
 export const UseState = () => {
-    return (
-        <>
-            <InfoPage
-            initialCode={
-                `function LikeButton(){
+  return (
+    <>
+      <InfoPage
+        initialCode={`function LikeButton(){
                 const [likes, increaseLikes] = React.useState(0)
                 
                 return (
@@ -15,11 +13,10 @@ export const UseState = () => {
                   <button onClick={() => increaseLikes(likes + 1)}>like Button</button>
                 </>
                 )
-                }`
-            }
-            title='useState Hook'
-            description='React useState hook blah blah blah'
-            />
-        </>
-    )
-}
+                }`}
+        title="useState Hook"
+        description="React useState hook blah blah blah"
+      />
+    </>
+  );
+};

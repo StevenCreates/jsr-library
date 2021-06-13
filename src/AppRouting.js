@@ -1,25 +1,32 @@
-import {useContext, useEffect, useMemo} from 'react'
+import { useContext, useEffect, useMemo } from "react";
 import { SideNav } from "./components/SideNav";
-import { useAddLinksToNavigation } from './hooks/useAddLinksToNavigation';
+import { useAddLinksToNavigation } from "./hooks/useAddLinksToNavigation";
 import { UseState } from "./ReactPages/UseState";
-import { AppContext } from './utils/ReactPagesContext';
-import { BrowserRouter as Router, Switch, Route, useHistory } from "react-router-dom";
-import { MANUAL_ADD_NAVIGATION_LINKS } from "./NavigationLinks"
+import { AppContext } from "./utils/ReactPagesContext";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useHistory,
+} from "react-router-dom";
+import { MANUAL_ADD_NAVIGATION_LINKS } from "./NavigationLinks";
 
 export const AppRouting = () => {
-  const { links, setLinks } = useContext(AppContext)
+  const { links, setLinks } = useContext(AppContext);
 
-  const newNavigationLinks = useAddLinksToNavigation(MANUAL_ADD_NAVIGATION_LINKS)
+  const newNavigationLinks = useAddLinksToNavigation(
+    MANUAL_ADD_NAVIGATION_LINKS
+  );
 
   useEffect(() => {
-    setLinks(newNavigationLinks ? newNavigationLinks : links)
-  }, [])
+    setLinks(newNavigationLinks ? newNavigationLinks : links);
+  }, []);
 
   const history = useHistory();
   return (
     <>
       <Router history={history}>
-      <SideNav />
+        <SideNav />
         <Switch>
           <Route exact path="/">
             <p>Home</p>
@@ -31,5 +38,4 @@ export const AppRouting = () => {
       </Router>
     </>
   );
-}
-
+};
