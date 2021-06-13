@@ -2,12 +2,13 @@ import styled from "styled-components";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 
 const Title = styled.div`
-    color: grey;
+    color: #ff7040;
     padding-left: 12px;
-    padding-top: 12px;
-    font-size: 24px;
+    padding-top: 30px;
+    padding-bottom: 8px;
+    font-size: 18px;
+    text-align: center;
     width: 100%;
-    height: 30px;
     background: #343434;
 `;
 
