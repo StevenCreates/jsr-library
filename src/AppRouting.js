@@ -1,7 +1,7 @@
 import { useContext, useEffect, useMemo } from "react";
 import { SideNav } from "./components/SideNav";
 import { useAddLinksToNavigation } from "./hooks/useAddLinksToNavigation";
-import { UseState } from "./ReactPages/UseState";
+import { UseState } from "./ReactPages";
 import { AppContext } from "./utils/ReactPagesContext";
 import {
   BrowserRouter as Router,

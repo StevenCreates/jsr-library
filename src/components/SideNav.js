@@ -27,14 +27,15 @@ const NavigationItemsContainer = styled.div`
 `;
 
 const LinkContainer = styled.div`
-text-align: center;
+text-align: left;
 width: 100%;
+padding-left: 16px;
 `
 
 const NavigationItems = styled(Link)`
     text-decoration: none;
     textDecoration: "none",
-    text-align: center;
+    text-align: left;
     color: white;
     margin-top: 10px;
     width: full;
@@ -69,7 +70,7 @@ export const SideNav = () => {
           }}
           alt="logo"
         />
-        <SpanStyles>React Examples</SpanStyles>
+        <SpanStyles>React</SpanStyles>
       </LogoContainer>
       {/* <Router> */}
         <NavigationItemsContainer>
