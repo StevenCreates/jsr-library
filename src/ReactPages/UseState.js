@@ -1,6 +1,5 @@
 
 import { InfoPage } from '../components/InfoPage'
-import { AppContext } from '../utils/ReactPagesContext'
 
 export const UseState = () => {
     return (

@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useMemo } from "react";
 
 export const AppContext = createContext();
 
@@ -7,6 +7,7 @@ export const AppProvider = ({ children }) => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
   ]);
+
   const value = {
     links,
     setLinks,

@@ -1,20 +1,18 @@
-import {useContext, useEffect} from 'react'
-import { InfoPage } from "./components/InfoPage";
+import {useContext, useEffect, useMemo} from 'react'
 import { SideNav } from "./components/SideNav";
+import { useAddLinksToNavigation } from './hooks/useAddLinksToNavigation';
 import { UseState } from "./ReactPages/UseState";
 import { AppContext } from './utils/ReactPagesContext';
 import { BrowserRouter as Router, Switch, Route, useHistory } from "react-router-dom";
+import { MANUAL_ADD_NAVIGATION_LINKS } from "./NavigationLinks"
 
 export const AppRouting = () => {
-const { links, setLinks } = useContext(AppContext)
+  const { links, setLinks } = useContext(AppContext)
+
+  const newNavigationLinks = useAddLinksToNavigation(MANUAL_ADD_NAVIGATION_LINKS)
 
   useEffect(() => {
-    setLinks([
-      ...links,
-      {
-           name: "useState", path: "/useState" ,
-      }
-  ])
+    setLinks(newNavigationLinks ? newNavigationLinks : links)
   }, [])
 
   const history = useHistory();
