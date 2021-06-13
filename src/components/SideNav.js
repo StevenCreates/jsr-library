@@ -71,7 +71,7 @@ export const SideNav = () => {
         />
         <SpanStyles>React Examples</SpanStyles>
       </LogoContainer>
-      <Router>
+      {/* <Router> */}
         <NavigationItemsContainer>
           {links.map((link) => (
             <NavigationLinkItem
@@ -81,7 +81,7 @@ export const SideNav = () => {
             />
           ))}
         </NavigationItemsContainer>
-      </Router>
+      {/* </Router> */}
     </SideNavContainer>
   );
 };

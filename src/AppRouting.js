@@ -1,15 +1,33 @@
+import {useContext, useEffect} from 'react'
 import { InfoPage } from "./components/InfoPage";
 import { SideNav } from "./components/SideNav";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { UseState } from "./ReactPages/UseState";
+import { AppContext } from './utils/ReactPagesContext';
+import { BrowserRouter as Router, Switch, Route, useHistory } from "react-router-dom";
 
-function AppRouting() {
+export const AppRouting = () => {
+const { links, setLinks } = useContext(AppContext)
+
+  useEffect(() => {
+    setLinks([
+      ...links,
+      {
+           name: "useState", path: "/useState" ,
+      }
+  ])
+  }, [])
+
+  const history = useHistory();
   return (
     <>
+      <Router history={history}>
       <SideNav />
-      <Router>
         <Switch>
           <Route exact path="/">
-            <InfoPage />
+            <p>Home</p>
+          </Route>
+          <Route exact path="/useState">
+            <UseState />
           </Route>
         </Switch>
       </Router>
@@ -17,4 +35,3 @@ function AppRouting() {
   );
 }
 
-export default AppRouting;
