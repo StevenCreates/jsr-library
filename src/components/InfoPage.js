@@ -13,24 +13,24 @@ export const InfoPage = ({ title, description, initialCode }) => {
             style={{
               background: `#343434`,
               width: `85vw`,
+              marginTop: `36px`,
               minHeight: `25vh`,
               maxHeight: `50vh`,
               boxShadow: `0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(255,255,255,0)`,
+              borderRadius: `2px`,
             }}
           />
           <ResultGrid>
             <SubContainer>
               <SubTitle>Code Explanation</SubTitle>
-              <InnerContentContainer>
-                {description}
-              </InnerContentContainer>
+              <InnerContentContainer>{description}</InnerContentContainer>
             </SubContainer>
             <ResultContainer>
-            <SubTitle>Results</SubTitle>
-            <ResultsInnerContainer>
-              <LiveError />
-              <LivePreview />
-            </ResultsInnerContainer>
+              <SubTitle>Results</SubTitle>
+              <ResultsInnerContainer>
+                <LiveError />
+                <LivePreview />
+              </ResultsInnerContainer>
             </ResultContainer>
           </ResultGrid>
         </LiveProvider>
@@ -40,22 +40,27 @@ export const InfoPage = ({ title, description, initialCode }) => {
 };
 
 const InnerContentContainer = styled.div`
-  margin-top: 26px;
+  margin-top: 28px;
   padding-left: 8px;
 `;
 
 const ResultsInnerContainer = styled.div`
-  margin-top: 26px;
+  margin-top: 28px;
   padding-left: 8px;
   text-align: center;
 `;
 
 const Title = styled.div`
   padding: 8px 8px 8px 8px;
-  margin: 24px 8px 8px 0px;
+  margin: 24px 36px;
+  position: absolute;
+  border-radius: 2px;
+  top: 0px;
+  right: 0px;
   font-size: 18px;
   text-align: left;
   background: white;
+  z-index: 12;
   display: inline-block;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(255, 255, 255, 0);
@@ -65,7 +70,8 @@ const Title = styled.div`
 
 const SubTitle = styled.div`
   position: absolute;
-  padding: 2px 2px 2px 2px;
+  padding: 2px 4px;
+  border-radius: 2px;
   color: black;
   font-size: 18px;
   text-align: left;
@@ -97,6 +103,7 @@ const ResultGrid = styled.div`
 const SubContainer = styled.div`
   background: #343434;
   color: white;
+  border-radius: 2px;
   margin-right: 4px;
   height: 15vh;
   max-width: 49%;
@@ -109,6 +116,7 @@ const SubContainer = styled.div`
 
 const ResultContainer = styled.div`
   background: #343434;
+  border-radius: 2px;
   color: white;
   margin-left: 4px;
   height: 15vh;
