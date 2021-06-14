@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 
 const SideNavContainer = styled.div`
   height: 100vh;
+  display: inline-block;
   width: 15vw;
   background: #191919;
 `;

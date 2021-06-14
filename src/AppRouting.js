@@ -1,7 +1,8 @@
 import { useContext, useEffect, useMemo } from "react";
 import { SideNav } from "./components/SideNav";
 import { useAddLinksToNavigation } from "./hooks/useAddLinksToNavigation";
-import { UseState } from "./ReactPages";
+import { BreadCrumbNavigation } from "./components/BreadCrumbNavigation";
+import { UseEffect, UseState } from "./ReactPages";
 import { AppContext } from "./utils/ReactPagesContext";
 import {
   BrowserRouter as Router,
@@ -34,7 +35,11 @@ export const AppRouting = () => {
           <Route exact path="/useState">
             <UseState />
           </Route>
+          <Route exact path="/useEffect">
+            <UseEffect />
+          </Route>
         </Switch>
+        <BreadCrumbNavigation />
       </Router>
     </>
   );

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import { InformationContainer } from "../styledComponents/InformationContainer";
+
 export const InfoPage = ({ title, description, initialCode }) => {
   return (
     <div>
@@ -28,11 +29,25 @@ export const InfoPage = ({ title, description, initialCode }) => {
               <InnerContentContainer>{description}</InnerContentContainer>
             </InformationContainer>
           </ResultGrid>
+          <ResultGrid>
+            <InformationContainer title="More Examples:" height="45vh">
+              No Extra Examples... Sad.. Maybe Consider Contributing One?
+            </InformationContainer>
+            <>
+            <InformationContainer title="About Current Code" height="30vh">
+              Coming Soon!
+            </InformationContainer>
+            {/* <InformationContainer title="About Current Code" height="30vh">
+              Coming Soon!
+            </InformationContainer> */}
+            </>
+          </ResultGrid>
         </LiveProvider>
       </LiveEditorContainer>
     </div>
   );
 };
+
 
 const InnerContentContainer = styled.div`
   margin-top: 28px;
@@ -74,3 +89,10 @@ const ResultGrid = styled.div`
   max-width: 100vw;
   justify-content: space-between;
 `;
+
+const FlexColumn = styled.div`
+  display: flex:
+  flex-direction: column;
+  width: 100vw;
+`;
+
