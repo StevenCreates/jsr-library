@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
-
+import { InformationContainer } from "../styledComponents/InformationContainer";
 export const InfoPage = ({ title, description, initialCode }) => {
   return (
     <div>
@@ -12,7 +12,6 @@ export const InfoPage = ({ title, description, initialCode }) => {
           <LiveEditor
             style={{
               background: `#343434`,
-              width: `85vw`,
               marginTop: `36px`,
               minHeight: `25vh`,
               maxHeight: `50vh`,
@@ -21,17 +20,13 @@ export const InfoPage = ({ title, description, initialCode }) => {
             }}
           />
           <ResultGrid>
-            <SubContainer>
-              <SubTitle>Code Explanation</SubTitle>
+            <InformationContainer title="Results">
+              <LiveError />
+              <LivePreview />
+            </InformationContainer>
+            <InformationContainer title="About Hook">
               <InnerContentContainer>{description}</InnerContentContainer>
-            </SubContainer>
-            <ResultContainer>
-              <SubTitle>Results</SubTitle>
-              <ResultsInnerContainer>
-                <LiveError />
-                <LivePreview />
-              </ResultsInnerContainer>
-            </ResultContainer>
+            </InformationContainer>
           </ResultGrid>
         </LiveProvider>
       </LiveEditorContainer>
@@ -41,13 +36,7 @@ export const InfoPage = ({ title, description, initialCode }) => {
 
 const InnerContentContainer = styled.div`
   margin-top: 28px;
-  padding-left: 8px;
-`;
-
-const ResultsInnerContainer = styled.div`
-  margin-top: 28px;
-  padding-left: 8px;
-  text-align: center;
+  padding: 8px;
 `;
 
 const Title = styled.div`
@@ -61,21 +50,6 @@ const Title = styled.div`
   text-align: left;
   background: white;
   z-index: 12;
-  display: inline-block;
-  -webkit-box-shadow: 0px 10px 13px -7px #000000,
-    5px 5px 15px 5px rgba(255, 255, 255, 0);
-  box-shadow: 0px 10px 13px -7px #000000,
-    5px 5px 15px 5px rgba(255, 255, 255, 0);
-`;
-
-const SubTitle = styled.div`
-  position: absolute;
-  padding: 2px 4px;
-  border-radius: 2px;
-  color: black;
-  font-size: 18px;
-  text-align: left;
-  background: white;
   display: inline-block;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(255, 255, 255, 0);
@@ -98,32 +72,5 @@ const ResultGrid = styled.div`
   flex-direction: row;
   margin-top: 16px;
   max-width: 100vw;
-`;
-
-const SubContainer = styled.div`
-  background: #343434;
-  color: white;
-  border-radius: 2px;
-  margin-right: 4px;
-  height: 15vh;
-  max-width: 49%;
-  width: 49%;
-  -webkit-box-shadow: 0px 10px 13px -7px #000000,
-    5px 5px 15px 5px rgba(255, 255, 255, 0);
-  box-shadow: 0px 10px 13px -7px #000000,
-    5px 5px 15px 5px rgba(255, 255, 255, 0);
-`;
-
-const ResultContainer = styled.div`
-  background: #343434;
-  border-radius: 2px;
-  color: white;
-  margin-left: 4px;
-  height: 15vh;
-  width: 49%;
-  max-width: 49%;
-  -webkit-box-shadow: 0px 10px 13px -7px #000000,
-    5px 5px 15px 5px rgba(255, 255, 255, 0);
-  box-shadow: 0px 10px 13px -7px #000000,
-    5px 5px 15px 5px rgba(255, 255, 255, 0);
+  justify-content: space-between;
 `;

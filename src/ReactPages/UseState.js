@@ -14,7 +14,7 @@ export const UseState = () => {
                 </>
                 )
                 }`}
-        title="useState Hook"
+        title="useState Increment Button"
         description="Returns [value, function], a value and a function to update that value.
         Upon render the value that is passed to the useState(value) will be the values inital value.
         The function (or setState) is used to update the value, it accepts a new value and then re-renders the component."
