@@ -13,6 +13,8 @@ export const InformationContainer = ({
     flex: 0 1 auto;
     align-self: auto;
     background: #343434;
+    margin-right: 16px;
+    margin-top: 16px;
     border-radius: 2px;
     color: white;
     height: ${height ? height : "15vh"};
