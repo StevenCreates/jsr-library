@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const InformationContainer = ({
-  size,
+  width,
+  height,
   titleBackground,
   title,
   children
@@ -11,9 +12,9 @@ export const InformationContainer = ({
   background: #343434;
   border-radius: 2px;
   color: white;
-  height: 15vh;
-  width: ${ size ? size : '49.5%'};
-  max-width: ${ size ? size : '49.5%'};
+  height: ${ height ? height : '15vh'};
+  width: ${ width ? width : '49.5%'};
+  max-width: ${ width ? width : '49.5%'};
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(255, 255, 255, 0);
   box-shadow: 0px 10px 13px -7px #000000,
