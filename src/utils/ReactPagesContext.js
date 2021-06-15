@@ -1,11 +1,9 @@
-import { createContext, useState, useMemo } from "react";
+import { createContext, useState } from "react";
 
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [links, setLinks] = useState([
-  
-  ]);
+  const [links, setLinks] = useState([]);
 
   const value = {
     links,
