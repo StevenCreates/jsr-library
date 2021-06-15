@@ -4,8 +4,7 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [links, setLinks] = useState([
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
+  
   ]);
 
   const value = {
