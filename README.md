@@ -1,1 +1,9 @@
-## Personal JS and React Library
+## Library Of Examples
+
+# Currently a WIP
+
+# Currently Working on React Exmaples 
+
+# Will add JS/Framer-Motion Next
+
+# Plus the ability to contribute
