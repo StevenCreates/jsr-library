@@ -29,9 +29,10 @@ export const AppRouting = () => {
       <Router history={history}>
         <SideNav />
         <Switch>
-          <Route exact path="/">
+          {/* Commenting out for future use */}
+          {/* <Route exact path="/">
             <p>Home</p>
-          </Route>
+          </Route> */}
           <Route exact path="/useState">
             <UseState />
           </Route>
